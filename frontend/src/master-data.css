@@ -1,0 +1,883 @@
+/* =========================================================
+   MASTER DATA ADMINISTRATION
+   ========================================================= */
+
+.master-page {
+    padding: 24px;
+    min-width: 0;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.master-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 22px;
+}
+
+.master-header h2 {
+    margin: 5px 0 7px;
+    color: #211f1c;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.master-header p {
+    margin: 0;
+}
+
+.master-header > div:first-child {
+    min-width: 0;
+}
+
+.master-header .primary {
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   MASTER LAYOUT
+   ========================================================= */
+
+.master-layout {
+    display: grid;
+    grid-template-columns: 230px minmax(0, 1fr);
+    gap: 20px;
+    align-items: start;
+}
+
+
+/* =========================================================
+   LEFT NAVIGATION
+   ========================================================= */
+
+.master-nav {
+    background: #fffdf8;
+    border: 1px solid #e5dccb;
+    border-radius: 14px;
+    padding: 9px;
+    position: sticky;
+    top: 18px;
+    box-shadow: 0 4px 18px rgba(70, 55, 30, 0.06);
+}
+
+.master-nav button {
+    width: 100%;
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+
+    border: 1px solid transparent;
+    outline: none;
+
+    background: transparent;
+    padding: 10px 13px;
+    margin: 2px 0;
+
+    border-radius: 9px;
+
+    color: #4b5563;
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition:
+        background 0.18s ease,
+        color 0.18s ease,
+        border-color 0.18s ease,
+        transform 0.18s ease;
+}
+
+.master-nav button:hover {
+    background: #f7f0df;
+    color: #211f1c;
+    border-color: #eadfca;
+}
+
+.master-nav button:active {
+    transform: scale(0.99);
+}
+
+.master-nav button.active {
+    background: #211f1c;
+    color: #ffffff;
+    border-color: #211f1c;
+    box-shadow: 0 5px 12px rgba(33, 31, 28, 0.14);
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.master-content {
+    min-width: 0;
+}
+
+.master-content-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 44px;
+    margin-bottom: 12px;
+}
+
+.master-content-head > div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.master-content-head strong {
+    color: #211f1c;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.master-content-head span {
+    color: #8a7d68;
+    font-size: 12px;
+    font-weight: 600;
+    background: #f7f0df;
+    border: 1px solid #eadfca;
+    padding: 5px 9px;
+    border-radius: 999px;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+   ========================================================= */
+
+.master-page .primary {
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    border: 1px solid #211f1c;
+    border-radius: 9px;
+
+    padding: 10px 17px;
+
+    background: #211f1c;
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 10px rgba(33, 31, 28, 0.12);
+
+    transition:
+        background 0.18s ease,
+        border-color 0.18s ease,
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.master-page .primary:hover {
+    background: #3a3631;
+    border-color: #3a3631;
+    box-shadow: 0 6px 14px rgba(33, 31, 28, 0.18);
+    transform: translateY(-1px);
+}
+
+.master-page .primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(33, 31, 28, 0.12);
+}
+
+.master-page .primary:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   TABLE CONTAINER
+   ========================================================= */
+
+.master-content .admin-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+
+    background: #fffdf8;
+
+    border: 1px solid #e5dccb;
+    border-radius: 14px;
+
+    box-shadow: 0 4px 18px rgba(70, 55, 30, 0.05);
+
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.master-content .admin-table {
+    width: 100%;
+    min-width: 720px;
+
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.master-content .admin-table th,
+.master-content .admin-table td {
+    padding: 13px 14px;
+
+    border-bottom: 1px solid #eee5d5;
+
+    text-align: left;
+    vertical-align: middle;
+
+    white-space: nowrap;
+}
+
+.master-content .admin-table th {
+    background: #f7f0df;
+
+    color: #5f513b;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.master-content .admin-table th:first-child {
+    border-top-left-radius: 13px;
+}
+
+.master-content .admin-table th:last-child {
+    border-top-right-radius: 13px;
+}
+
+.master-content .admin-table td {
+    background: #fffdf8;
+
+    color: #374151;
+
+    font-size: 13px;
+}
+
+.master-content .admin-table tbody tr {
+    transition: background 0.15s ease;
+}
+
+.master-content .admin-table tbody tr:hover td {
+    background: #fcf8ef;
+}
+
+.master-content .admin-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.master-content .admin-table td strong {
+    color: #211f1c;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.status-active,
+.status-inactive {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 58px;
+
+    padding: 5px 10px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.status-active {
+    background: #e9f8ee;
+    color: #19713a;
+    border: 1px solid #ccebd7;
+}
+
+.status-inactive {
+    background: #f9eaea;
+    color: #a32929;
+    border: 1px solid #efd0d0;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.row-actions {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.row-actions button {
+    min-height: 34px;
+
+    padding: 7px 11px;
+
+    border: 1px solid #d9d0bf;
+    border-radius: 8px;
+
+    background: #ffffff;
+    color: #374151;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease,
+        color 0.15s ease,
+        transform 0.15s ease;
+}
+
+.row-actions button:hover {
+    background: #f7f0df;
+    border-color: #cdbd9f;
+    color: #211f1c;
+}
+
+.row-actions button:active {
+    transform: scale(0.98);
+}
+
+.row-actions button.danger {
+    color: #b42318;
+    border-color: #e6c4c0;
+    background: #fffafa;
+}
+
+.row-actions button.danger:hover {
+    color: #ffffff;
+    background: #b42318;
+    border-color: #b42318;
+}
+
+.row-actions button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   FORM / MODAL
+   ========================================================= */
+
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    background: rgba(15, 23, 42, 0.58);
+
+    backdrop-filter: blur(3px);
+}
+
+.admin-modal {
+    width: min(560px, 100%);
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: #ffffff;
+
+    border: 1px solid #e5dccb;
+    border-radius: 16px;
+
+    padding: 24px;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.22),
+        0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.admin-modal.wide {
+    width: min(850px, 100%);
+}
+
+
+/* =========================================================
+   MODAL HEADER
+   ========================================================= */
+
+.modal-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 18px;
+
+    margin-bottom: 22px;
+}
+
+.modal-head h3 {
+    margin: 4px 0 0;
+
+    color: #211f1c;
+
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.modal-close {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border: 1px solid #e1d8c8;
+    border-radius: 8px;
+
+    background: #f7f3eb;
+    color: #4b5563;
+
+    font-size: 21px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        color 0.15s ease,
+        border-color 0.15s ease;
+}
+
+.modal-close:hover {
+    background: #211f1c;
+    color: #ffffff;
+    border-color: #211f1c;
+}
+
+
+/* =========================================================
+   FORM GRID
+   ========================================================= */
+
+.master-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 15px;
+}
+
+.master-form-grid label {
+    display: block;
+
+    color: #334155;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.master-form-grid input,
+.master-form-grid select {
+    width: 100%;
+    box-sizing: border-box;
+
+    min-height: 42px;
+
+    margin-top: 7px;
+
+    padding: 9px 11px;
+
+    border: 1px solid #d8d0c1;
+    border-radius: 8px;
+
+    background: #ffffff;
+    color: #1f2937;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    outline: none;
+
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.15s ease;
+}
+
+.master-form-grid input:hover,
+.master-form-grid select:hover {
+    border-color: #c5b99f;
+}
+
+.master-form-grid input:focus,
+.master-form-grid select:focus {
+    border-color: #8c7550;
+    box-shadow: 0 0 0 3px rgba(181, 138, 58, 0.13);
+    background: #fffefa;
+}
+
+.master-form-grid input::placeholder {
+    color: #9ca3af;
+}
+
+
+/* =========================================================
+   ACTIVE CHECKBOX
+   ========================================================= */
+
+.master-checkbox {
+    display: flex !important;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 18px;
+
+    color: #334155;
+
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.master-checkbox input {
+    width: 17px !important;
+    height: 17px !important;
+    min-height: 17px !important;
+
+    margin: 0 !important;
+
+    accent-color: #211f1c;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   MODAL ACTIONS
+   ========================================================= */
+
+.modal-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 9px;
+
+    margin-top: 24px;
+    padding-top: 18px;
+
+    border-top: 1px solid #eee5d5;
+}
+
+.modal-actions button {
+    min-height: 40px;
+
+    padding: 9px 16px;
+
+    border: 1px solid #d9d0bf;
+    border-radius: 8px;
+
+    background: #ffffff;
+    color: #374151;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease,
+        color 0.15s ease;
+}
+
+.modal-actions button:hover {
+    background: #f7f0df;
+    border-color: #cdbd9f;
+}
+
+.modal-actions .primary {
+    border-color: #211f1c;
+    background: #211f1c;
+    color: #ffffff;
+}
+
+.modal-actions .primary:hover {
+    background: #3a3631;
+    border-color: #3a3631;
+}
+
+.modal-actions button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   MESSAGES
+   ========================================================= */
+
+.success {
+    margin-bottom: 16px;
+
+    padding: 11px 14px;
+
+    border: 1px solid #b7dfc5;
+    border-radius: 9px;
+
+    background: #effaf2;
+    color: #176b36;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.error {
+    margin-bottom: 16px;
+
+    padding: 11px 14px;
+
+    border: 1px solid #edc4c0;
+    border-radius: 9px;
+
+    background: #fff4f3;
+    color: #b42318;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   EMPTY / LOADING
+   ========================================================= */
+
+.empty-state,
+.empty-cell {
+    padding: 40px !important;
+
+    text-align: center !important;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+.empty-state {
+    background: #fffdf8;
+    border: 1px solid #e5dccb;
+    border-radius: 14px;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+.master-content .admin-table-wrap::-webkit-scrollbar,
+.admin-modal::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+}
+
+.master-content .admin-table-wrap::-webkit-scrollbar-track,
+.admin-modal::-webkit-scrollbar-track {
+    background: #f5f0e7;
+}
+
+.master-content .admin-table-wrap::-webkit-scrollbar-thumb,
+.admin-modal::-webkit-scrollbar-thumb {
+    background: #cfc3ad;
+    border-radius: 999px;
+}
+
+.master-content .admin-table-wrap::-webkit-scrollbar-thumb:hover,
+.admin-modal::-webkit-scrollbar-thumb:hover {
+    background: #aa9b82;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .master-layout {
+        grid-template-columns: 190px minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .master-nav button {
+        font-size: 12px;
+        padding: 9px 10px;
+    }
+
+    .master-header {
+        gap: 15px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .master-page {
+        padding: 16px;
+    }
+
+    .master-header {
+        flex-direction: column;
+    }
+
+    .master-header .primary {
+        width: 100%;
+    }
+
+    .master-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .master-nav {
+        position: static;
+
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 5px;
+    }
+
+    .master-nav button {
+        margin: 0;
+    }
+
+    .master-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-modal {
+        padding: 18px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+    .master-page {
+        padding: 12px;
+    }
+
+    .master-header h2 {
+        font-size: 21px;
+    }
+
+    .master-nav {
+        grid-template-columns: 1fr;
+    }
+
+    .master-content-head {
+        align-items: flex-start;
+    }
+
+    .master-content-head > div {
+        flex-wrap: wrap;
+    }
+
+    .modal-backdrop {
+        padding: 10px;
+    }
+
+    .admin-modal,
+    .admin-modal.wide {
+        width: 100%;
+        max-height: 94vh;
+
+        padding: 16px;
+
+        border-radius: 13px;
+    }
+
+    .modal-actions {
+        flex-direction: column-reverse;
+    }
+
+    .modal-actions button {
+        width: 100%;
+    }
+
+    .row-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .row-actions button {
+        width: 100%;
+    }
+}
+
+/* Final reference button/table polish */
+.master-page button,
+.master-page input,
+.master-page select {
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.master-page .master-content-head .primary {
+    background: #211f1c !important;
+    border-color: #211f1c !important;
+    color: #fff !important;
+}
+
+.master-page .master-content-head .primary:hover {
+    background: #3a3631 !important;
+    border-color: #3a3631 !important;
+}
+
+.master-page .row-actions .danger {
+    color: #b42318;
+    background: #fffafa;
+}
+
+.master-page .row-actions .danger:hover {
+    background: #b42318;
+    color: #fff;
+}
